@@ -8,7 +8,6 @@ import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.apache.wicket.request.resource.caching.FilenameWithVersionResourceCachingStrategy;
 import org.apache.wicket.request.resource.caching.NoOpResourceCachingStrategy;
@@ -20,17 +19,12 @@ import com.google.javascript.jscomp.CompilationLevel;
 
 import de.agilecoders.wicket.core.Bootstrap;
 import de.agilecoders.wicket.core.markup.html.RenderJavaScriptToFooterHeaderResponseDecorator;
-import de.agilecoders.wicket.core.markup.html.references.BootstrapPrettifyCssReference;
-import de.agilecoders.wicket.core.markup.html.references.BootstrapPrettifyJavaScriptReference;
 import de.agilecoders.wicket.core.markup.html.references.ModernizrJavaScriptReference;
 import de.agilecoders.wicket.core.request.resource.caching.version.Adler32ResourceVersion;
 import de.agilecoders.wicket.core.settings.BootstrapSettings;
 import de.agilecoders.wicket.core.settings.ThemeProvider;
 import de.agilecoders.wicket.extensions.javascript.GoogleClosureJavaScriptCompressor;
 import de.agilecoders.wicket.extensions.javascript.YuiCssCompressor;
-import de.agilecoders.wicket.extensions.markup.html.bootstrap.html5player.Html5PlayerCssReference;
-import de.agilecoders.wicket.extensions.markup.html.bootstrap.html5player.Html5PlayerJavaScriptReference;
-import de.agilecoders.wicket.extensions.markup.html.bootstrap.icon.OpenWebIconsCssReference;
 //import de.agilecoders.wicket.extensions.markup.html.bootstrap.jqueryui.JQueryUICoreJavaScriptReference;
 //import de.agilecoders.wicket.extensions.markup.html.bootstrap.jqueryui.JQueryUIDraggableJavaScriptReference;
 //import de.agilecoders.wicket.extensions.markup.html.bootstrap.jqueryui.JQueryUIMouseJavaScriptReference;
@@ -43,8 +37,7 @@ import de.agilecoders.wicket.themes.markup.html.google.GoogleTheme;
 import de.agilecoders.wicket.themes.markup.html.metro.MetroTheme;
 import de.agilecoders.wicket.themes.markup.html.wicket.WicketTheme;
 import de.agilecoders.wicket.themes.settings.BootswatchThemeProvider;
-import de.agilecoders.wicket.webjars.collectors.VfsJarAssetPathCollector;
-import de.agilecoders.wicket.webjars.util.WicketWebjars;
+//import de.agilecoders.wicket.webjars.collectors.VfsJarAssetPathCollector;
 
 /**
  * Application object for your web application. If you want to run this
@@ -84,8 +77,8 @@ public class WicketApplication extends WebApplication
     public void init() {
         super.init();
 
-        WicketWebjars.install(this);
-        WicketWebjars.registerCollector(new VfsJarAssetPathCollector());
+        // WicketWebjars.install(this);
+        // WicketWebjars.registerCollector(new VfsJarAssetPathCollector());
 
         // deactivate ajax debug mode
         getDebugSettings().setAjaxDebugModeEnabled(false);
@@ -141,10 +134,11 @@ public class WicketApplication extends WebApplication
                         (JavaScriptResourceReference)getJavaScriptLibrarySettings().getWicketEventReference(), (JavaScriptResourceReference)getJavaScriptLibrarySettings().getWicketAjaxReference(),
                         (JavaScriptResourceReference)ModernizrJavaScriptReference.INSTANCE);
 
-        
-        
-//        getResourceBundles().addJavaScriptBundle(WicketApplication.class, "bootstrap.js", (JavaScriptResourceReference)Bootstrap.getSettings().getJsResourceReference(),
-//                        (JavaScriptResourceReference)BootstrapPrettifyJavaScriptReference.INSTANCE, ApplicationJavaScript.INSTANCE);
+        // getResourceBundles().addJavaScriptBundle(WicketApplication.class,
+        // "bootstrap.js",
+        // (JavaScriptResourceReference)Bootstrap.getSettings().getJsResourceReference(),
+        // (JavaScriptResourceReference)BootstrapPrettifyJavaScriptReference.INSTANCE,
+        // ApplicationJavaScript.INSTANCE);
 
         // 0.9.0-SNAPSHOT
         // getResourceBundles().addJavaScriptBundle(WicketApplication.class,

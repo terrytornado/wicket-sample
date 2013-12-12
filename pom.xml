@@ -24,8 +24,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- <wicket.version>6.9.0-SNAPSHOT</wicket.version> -->
-		<wicket.version>6.12.0</wicket.version>
-		<wicket.bootstrap.version>0.8.4</wicket.bootstrap.version>
+		<wicket.version>6.10.0</wicket.version>
+		<!-- <wicket.bootstrap.version>0.8.4</wicket.bootstrap.version> -->
+		<wicketstuff.version>6.8.0</wicketstuff.version>
+		<wicketsource.version>6.0.0.8</wicketsource.version>
+		<wicket.bootstrap.version>0.9.0-SNAPSHOT</wicket.bootstrap.version>
+		<newrelic.version>2.19.1</newrelic.version>
 
 		<!-- MAVEN PLUGIN versions -->
 		<maven-war-plugin.version>2.3</maven-war-plugin.version>
@@ -88,7 +92,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>14.0.1</version>
+			<version>15.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.javascript</groupId>
@@ -115,19 +119,35 @@
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>de.agilecoders.wicket.webjars</groupId>
-			<artifactId>wicket-webjars</artifactId>
-			<version>0.3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>de.agilecoders.wicket.webjars</groupId>
-			<artifactId>vfs-support</artifactId>
-			<version>0.3.3</version>
-		</dependency>
+		<!-- <dependency> <groupId>de.agilecoders.wicket.webjars</groupId> <artifactId>wicket-webjars</artifactId> 
+			<version>0.3.3</version> </dependency> <dependency> <groupId>de.agilecoders.wicket.webjars</groupId> 
+			<artifactId>vfs-support</artifactId> <version>0.3.3</version> </dependency> -->
 		<!-- it's all in 1.9.0 <dependency> <groupId>org.webjars</groupId> <artifactId>jquery</artifactId> 
 			<version>1.8.3</version> </dependency> -->
+
+		<!-- WICKETSTUFF -->
+		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-annotation</artifactId>
+			<version>${wicketstuff.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.wicket</groupId>
+					<artifactId>wicket</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.newrelic.agent.java</groupId>
+			<artifactId>newrelic-api</artifactId>
+			<version>${newrelic.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.ftlines.wicket-source</groupId>
+			<artifactId>wicket-source</artifactId>
+			<version>${wicketsource.version}</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>de.agilecoders.wicket</groupId>
@@ -289,6 +309,13 @@
 			<name>Maven Central Repository</name>
 			<url>http://repo1/maven.org/maven2/</url>
 		</repository>
+		<repository>
+			<id>de.agilecoders</id>
+			<name>Wicket Repository</name>
+			<url>http://repo.typesafe.com/typesafe/repo/de/agilecoders/wicket/wicket-bootstrap-samples/</url>
+		</repository>
+
+
 
 	</repositories>
 </project>
