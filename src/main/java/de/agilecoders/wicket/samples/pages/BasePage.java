@@ -20,6 +20,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.string.StringValue;
 
+import com.mycompany.WicketApplication;
 import com.newrelic.api.agent.NewRelic;
 
 import de.agilecoders.wicket.core.Bootstrap;
@@ -43,7 +44,6 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.NavbarComponents;
 import de.agilecoders.wicket.core.markup.html.bootstrap.navbar.NavbarDropDownButton;
 import de.agilecoders.wicket.core.settings.IBootstrapSettings;
 import de.agilecoders.wicket.core.settings.ITheme;
-import de.agilecoders.wicket.samples.WicketApplication;
 import de.agilecoders.wicket.samples.assets.base.ApplicationJavaScript;
 import de.agilecoders.wicket.samples.assets.base.DocsCssResourceReference;
 import de.agilecoders.wicket.samples.assets.base.FixBootstrapStylesCssResourceReference;
